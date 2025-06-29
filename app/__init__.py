@@ -1,5 +1,5 @@
 from flask import Flask
-from app.auth.auth import auth_bp
+from app.auth.routes import auth_bp
 from app.routes.goals_mssql import goals_bp
 from app.routes.home import home_bp
 from app.routes.todo_postgress import todo_bp
