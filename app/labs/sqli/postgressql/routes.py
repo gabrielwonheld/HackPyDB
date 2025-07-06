@@ -45,5 +45,5 @@ def mission_delete(id):
 
 
     delete_mission(id)
-    return redirect('/mission_update')
+    return redirect('/mission_update_postgres')
     
