@@ -4,7 +4,7 @@
 
 <!-- FORMULÁRIO DE BUSCA -->
 <div id="form" class="container">
-    <form method="GET" action="/mission_update">
+    <form method="GET" action="/mysql/level1/mission_update">
         <input class="form-field" type="text" name="q" placeholder="Buscar por título" value="{{ term | default('') }}">
         <button  type="submit" class="submit-btn"> Buscar </button><br>
     <a href="{{ url_for('mysql_level_1.mission_add') }}" class="link">Adicionar Tarefa</a>

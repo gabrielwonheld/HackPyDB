@@ -4,7 +4,7 @@
 
 <!-- FORMULÁRIO DE BUSCA -->
 <div id="form" class="container">
-    <form method="GET" action="/mission_update_sqlserver">
+    <form method="GET" action="/sqlserver/level1/mission_update">
         <input class="form-field" type="text" name="q" placeholder="Buscar por título" value="{{ term | default('') }}">
         <button  type="submit" class="submit-btn"> Buscar </button><br>
     <a href="{{ url_for('sqlserver_level_1.mission_add') }}" class="link">Pesquisar Tarefa</a>
