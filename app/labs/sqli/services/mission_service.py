@@ -33,7 +33,6 @@ class Missions():
         try:
             conn = self.get_connection()
             cursor = conn.cursor()
-            # query = f"SELECT * FROM missions WHERE mission_name LIKE {self.placeholder}"
             query = f"SELECT * FROM missions WHERE mission_name LIKE '%{termo}%'"
             # cursor.execute(query, (f"%{termo}%",))
             cursor.execute(query)

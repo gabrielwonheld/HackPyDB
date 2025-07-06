@@ -6,9 +6,9 @@
 <section class="actions" style="margin-bottom: 2rem;">
     <h3>Desafios Disponíveis</h3>
     <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem;">
-        <a href="{{ url_for('goals.add_goal') }}" class="submit-btn" style="flex: 1; min-width: 200px;">SQL Server</a>
-        <a href="{{ url_for('todo.adicionar_tarefa') }}" class="submit-btn" style="flex: 1; min-width: 200px;">PostgreSQL</a>
-        <a href="{{ url_for('mission.add_mission') }}" class="submit-btn" style="flex: 1; min-width: 200px;">MySQL</a>
+        <a href="{{ url_for('mission_mysql.mission_add') }}" class="submit-btn" style="flex: 1; min-width: 200px;">Nível 1</a> <!-- Mysql-->
+        <a href="{{ url_for('mission_postgres.mission_add') }}" class="submit-btn" style="flex: 1; min-width: 200px;">Nível 2</a> <!-- Postgres -->
+        <a href="{{ url_for('mission_sqlserver.mission_add') }}" class="submit-btn" style="flex: 1; min-width: 200px;">Nível 3</a> <!-- Sqlserver -->
     </div>
 </section>
 

@@ -10,19 +10,36 @@ def get_db_connection():
         port=int(os.getenv('DB_PORT', 5433))
     )
 
-def init_db_postgres_vuln():
-    conn = get_db_connection()
-    cur = conn.cursor()
 
-    cur.execute(''' 
-        CREATE TABLE IF NOT EXISTS tarefas (
-            id SERIAL PRIMARY KEY,
-            titulo TEXT NOT NULL,
-            status TEXT NOT NULL
-        );
+try:
+
+
+    def init_db_postgres_vuln():
+        conn = get_db_connection()
+        cur = conn.cursor()
+
+        cur.execute(''' 
+            CREATE TABLE IF NOT EXISTS tarefas (
+                id SERIAL PRIMARY KEY,
+                titulo TEXT NOT NULL,
+                status TEXT NOT NULL
+            );
+        ''')
+
+        cur.execute('''
+
+            CREATE TABLE IF NOT EXISTS missions (
+                    id SERIAL PRIMARY KEY,
+                    mission_name VARCHAR(255),
+                    status VARCHAR(100)
+            )
     ''')
 
-    conn.commit()
-    cur.close()
-    conn.close()
-    print("[OK] Banco de dados inicializado com sucesso!")
+
+        conn.commit()
+        cur.close()
+        conn.close()
+        print("[OK] Banco de dados inicializado com sucesso!")
+
+except Exception as e:
+    print(e)

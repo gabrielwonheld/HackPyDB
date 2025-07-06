@@ -57,12 +57,10 @@ def add_mission():
 @mission_bp.route('/mission_update', methods=['GET'])
 def mission_update():
     
-    if "username" not in session:
-        return redirect(url_for('auth.login'))
+    # if "username" not in session:
+        # return redirect(url_for('auth.login'))
     
     termo = request.args.get('q', '')
-
-
     try:
         conn = get_connection()
         cursor = conn.cursor()

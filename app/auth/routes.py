@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session
 from ..db.init_pyhackdb import get_app_db_connection
+import pyodbc
 
 auth_bp = Blueprint('auth', __name__, template_folder='templates/auth')
 

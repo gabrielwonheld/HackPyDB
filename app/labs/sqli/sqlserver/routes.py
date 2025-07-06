@@ -33,8 +33,7 @@ def mission_update():
         return render_template("mission_update_sqlserver.html", missions=missions)
 
     except Exception as e:
-        # return Response(f"{str(e)}", status=500)
-        return e
+        return Response(f"{str(e)}", status=500)
 
 
 @sqlserver_mission_bp.route('/excluir_mission_sqlserver/<int:id>', methods=['POST'])

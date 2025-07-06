@@ -16,6 +16,7 @@ def init_db_mssql():
         conn = get_connection()
         cursor = conn.cursor()
 
+        ### Tabela pomodoro
         cursor.execute('''
             IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='goals' AND xtype='U')
             CREATE TABLE goals (
@@ -25,6 +26,19 @@ def init_db_mssql():
                 pomodoro_count INT
             )
         ''')
+        ### Tabela de missoes
+        
+        cursor.execute("""
+            IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='missions' AND xtype='U')
+            BEGIN
+                CREATE TABLE missions (
+                    id INT IDENTITY(1,1) PRIMARY KEY,
+                    mission_name VARCHAR(100),
+                    status VARCHAR(100)
+                )
+            END
+        """)
+
 
         conn.commit()
     except Exception as e:
