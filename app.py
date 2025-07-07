@@ -9,6 +9,6 @@ app = create_app()
 if __name__ == "__main__":
     init_app_db_postgres()
     init_db_mssql()  # Inicializa as tabelas se ainda não existirem
-    init_db_postgres_vuln()  # Inicializa as tabelas se ainda não existirem
-    init_db_mysql() # Inicializa as tabelas do mysql
+    # init_db_postgres_vuln()  # Inicializa as tabelas se ainda não existirem
+    # init_db_mysql() # Inicializa as tabelas do mysql
     app.run(host="0.0.0.0", port=80, debug=True)
