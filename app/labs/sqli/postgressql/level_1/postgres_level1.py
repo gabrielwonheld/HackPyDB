@@ -1,7 +1,7 @@
-from app.db.postgres_vuln import get_db_connection as postgres_conn
+from app.db.postgres_vuln import get_db_connection as postgres_conn, get_connection_level1
 from app.labs.sqli.services.mission_service import Missions
 
-postgres_mission_service = Missions(postgres_conn,'%s')
+postgres_mission_service = Missions(get_connection=get_connection_level1, dbtype="postgres", placeholder="%s", schema="level1")
 
 def cadastrar_missao(nome_missao, status):
     return postgres_mission_service.add_mission(nome_missao, status)

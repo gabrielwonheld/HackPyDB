@@ -40,5 +40,5 @@ def mission_delete(id):
         return redirect(url_for("auth.login"))
 
     delete_mission(id)
-    return redirect(url_for("mysql_level_1.mission_update"))
+    return redirect(url_for("postgres_level_1.mission_update"))
     

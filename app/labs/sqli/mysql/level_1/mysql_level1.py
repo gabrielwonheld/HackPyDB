@@ -1,7 +1,7 @@
 from app.db.mysql import get_connection as mysql_conn
 from app.labs.sqli.services.mission_service import Missions
 
-mysql_mission_service = Missions(mysql_conn)
+mysql_mission_service =  Missions(get_connection=mysql_conn, dbtype="mysql", placeholder="%s", schema="level1")
 
 def cadastrar_missao(nome_missao, status):
     return mysql_mission_service.add_mission(nome_missao, status)
